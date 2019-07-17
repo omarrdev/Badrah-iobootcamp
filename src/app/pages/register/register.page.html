@@ -1,0 +1,98 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Home
+      </ion-title>
+      
+      <ion-buttons slot="secondary" (click)="search()" style="margin-inline-end:8px">
+          <ion-icon ios="ios-search" md="md-search"></ion-icon>
+      </ion-buttons>
+      <ion-buttons slot="secondary" style="margin-inline-end:8px">
+        <ion-icon ios="ios-person" md="md-person"></ion-icon>
+      </ion-buttons>
+      <ion-buttons slot="primary" style="margin-inline-end:8px">
+          <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+      </ion-buttons>
+      
+    </ion-toolbar>
+  
+    <ion-toolbar *ngIf="checkSearch==true" >
+        <ion-searchbar></ion-searchbar>  </ion-toolbar>
+    </ion-header>
+  
+
+  <ion-content>
+      <form  #form="ngForm" (ngSubmit)="register(form)">
+          <ion-grid>
+            <ion-row color="primary" justify-content-center>
+              <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                <div text-center>
+                  <h3>Create your account!</h3>
+                </div>
+                <div padding>
+                  <ion-item>
+                    <ion-input  name="name" type="text" placeholder="Name" ngModel required></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-input name="phoneNum" type="number" placeholder="Phone number" ngModel required></ion-input>
+                    </ion-item>
+                  <ion-item>
+                    <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input name="confirm" type="password" placeholder="Password again" ngModel required></ion-input>
+                  </ion-item>
+                </div>
+                <div padding>
+                  <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Register</ion-button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      
+
+  </ion-content>
+    
+    
+   
+  
+
+
+  <ion-footer style="text-align: center">
+    <div style="background-color: black; padding: 5%">
+    <div>
+      <ion-title style="color: white">بدرة</ion-title>
+    </div>
+    <div>
+      <h6 style="color: white">تـابـعـنـا</h6>
+      <ul style="display: inline">
+        <li style="display: inline"><a rel="nofollow" href="http://twitter.com/SouqKSA">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a></li>
+        <li style="display: inline"><a rel="nofollow" href="https://instagram.com/souqksa/">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li style="display: inline"><a rel="nofollow" href="http://twitter.com/SouqKSA">
+            السياسة والأحكام
+          </a></li>
+        <li style="display: inline"><a rel="nofollow" href="https://instagram.com/souqksa/">
+            من نحن
+          </a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="color: white">الحقوق محفوظة لمتجر بدرة</p>
+    </div>
+  </div>
+  </ion-footer>
